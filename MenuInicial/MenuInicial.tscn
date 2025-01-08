@@ -1,0 +1,150 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2jk11veho2ly"]
+
+[ext_resource type="Script" path="res://MenuInicial/MenuInicial.gd" id="1_pq5jh"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_pq5jh")
+
+[node name="MenuInicial" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MenuInicial"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 66
+bbcode_enabled = true
+text = "[center]Nome do jogo"
+fit_content = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuInicial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = 308.0
+offset_right = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="MenuInicial/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Jogar"
+
+[node name="Options" type="Button" parent="MenuInicial/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Opções"
+
+[node name="Quit" type="Button" parent="MenuInicial/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Sair"
+
+[node name="Opcoes" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Opcoes"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_right = 375.0
+offset_bottom = 649.0
+grow_horizontal = 2
+
+[node name="Titulo" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Opções"
+horizontal_alignment = 1
+
+[node name="ResolucaoLabel" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "Resolução"
+
+[node name="Resolucao" type="OptionButton" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1024x768"
+popup/item_3/id = 3
+
+[node name="VolumeLabel" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "Volume:"
+
+[node name="GeralLabel" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "Geral:
+"
+
+[node name="GeralSlider" type="HSlider" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicaLabel" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "Música:"
+
+[node name="MusicaSlider" type="HSlider" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="SFXLabel" type="Label" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "SFX:"
+
+[node name="SFXSlider" type="HSlider" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="Voltar" type="Button" parent="Opcoes/VBoxContainer"]
+layout_mode = 2
+text = "Voltar"
+
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Start" to="Node" method="_on_start_pressed"]
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Options" to="Node" method="_on_options_pressed"]
+[connection signal="pressed" from="MenuInicial/VBoxContainer/Quit" to="Node" method="_on_quit_pressed"]
+[connection signal="item_selected" from="Opcoes/VBoxContainer/Resolucao" to="Node" method="_on_resolucao_item_selected"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/GeralSlider" to="Node" method="_on_geral_slider_value_changed"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/MusicaSlider" to="Node" method="_on_musica_slider_value_changed"]
+[connection signal="value_changed" from="Opcoes/VBoxContainer/SFXSlider" to="Node" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="Node" method="_on_voltar_pressed"]

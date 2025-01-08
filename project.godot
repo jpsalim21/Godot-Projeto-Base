@@ -1,0 +1,30 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="ProjetoBase"
+run/main_scene="res://TransicaoDeCenas/TransicaoCena.tscn"
+config/features=PackedStringArray("4.3", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
+SceneController="*res://TransicaoDeCenas/SceneController.gd"
+GameController="*res://MenuInicial/GameController.gd"
+
+[dotnet]
+
+project/assembly_name="ProjetoBase"
+
+[rendering]
+
+renderer/rendering_method="mobile"
