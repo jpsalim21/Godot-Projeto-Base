@@ -1,10 +1,13 @@
 extends CanvasLayer
 
-@export var cortina : ColorRect
+@onready var animation: AnimationPlayer = $AnimationPlayer
 
-func preencheTela(booleano : bool):
-	var tween = create_tween()
+func preencheTela(booleano : bool, transicao : String = "Diamond"):
+	if not animation.has_animation(transicao):
+		printerr("NÃO HÁ ESSA ANIMAÇÃO. INSERIR ANIMAÇÃO CORRETA")
+		return
 	if booleano:
-		tween.tween_property(cortina, "material:shader_parameter/progress", 1, 1.0)
+		animation.play(transicao)
 	else:
-		tween.tween_property(cortina, "material:shader_parameter/progress", 0, 1.0)
+		animation.play_backwards(transicao)
+	await animation.animation_finished

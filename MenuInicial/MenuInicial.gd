@@ -8,14 +8,16 @@ func _ready() -> void:
 	$"../Opcoes/VBoxContainer/MusicaSlider".value = GameController.configuracoes.audioMusica
 	$"../Opcoes/VBoxContainer/SFXSlider".value = GameController.configuracoes.audioSFX
 	$"../Opcoes/VBoxContainer/Resolucao".selected = GameController.configuracoes.screen_index
+	$"../MenuInicial/VBoxContainer/Start".grab_focus()
 
 #Menu inicial
 func _on_start_pressed() -> void:
-	SceneController.changeSceneTo("INSIRA AQUI A CENA INICIAL")
+	SceneController.changeSceneTo("Teste.tscn", "CircleToon")
 
 func _on_options_pressed() -> void:
 	opcoes.visible = true
 	menu_inicial.visible = false
+	$"../Opcoes/VBoxContainer/Resolucao".grab_focus()
 
 func _on_quit_pressed() -> void:
 	GameController.fecharAplicacao()
@@ -24,7 +26,7 @@ func _on_quit_pressed() -> void:
 func _on_voltar_pressed() -> void:
 	opcoes.visible = false
 	menu_inicial.visible = true
-	#GameController.saveConfig()
+	$"../MenuInicial/VBoxContainer/Start".grab_focus()
 
 var resolucoes = [
 	Vector2i(1920, 1080),

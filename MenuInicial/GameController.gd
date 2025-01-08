@@ -4,6 +4,8 @@ var configuracoes : Configuracoes = null
 var savePath = "user://save/"
 var configFile = "Configuracao.tres"
 
+var jaAbriu = false
+
 func _enter_tree() -> void:
 	verify_save_directory(savePath)
 	loadData(configFile)

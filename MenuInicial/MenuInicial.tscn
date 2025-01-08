@@ -1,6 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2jk11veho2ly"]
+[gd_scene load_steps=7 format=3 uid="uid://b2jk11veho2ly"]
 
 [ext_resource type="Script" path="res://MenuInicial/MenuInicial.gd" id="1_pq5jh"]
+[ext_resource type="Script" path="res://MenuInicial/coisas_iniciais.gd" id="2_l5uqn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfrjk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_q8cmj"]
+resource_name = "Inicial"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0vkyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekcqx"]
+_data = {
+"Inicial": SubResource("Animation_q8cmj"),
+"RESET": SubResource("Animation_0vkyi")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -140,6 +181,30 @@ max_value = 0.0
 layout_mode = 2
 text = "Voltar"
 
+[node name="CoisasIniciais" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_l5uqn")
+
+[node name="Panel" type="Panel" parent="CoisasIniciais"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfrjk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CoisasIniciais"]
+libraries = {
+"": SubResource("AnimationLibrary_ekcqx")
+}
+autoplay = "Inicial"
+
 [connection signal="pressed" from="MenuInicial/VBoxContainer/Start" to="Node" method="_on_start_pressed"]
 [connection signal="pressed" from="MenuInicial/VBoxContainer/Options" to="Node" method="_on_options_pressed"]
 [connection signal="pressed" from="MenuInicial/VBoxContainer/Quit" to="Node" method="_on_quit_pressed"]
@@ -148,3 +213,4 @@ text = "Voltar"
 [connection signal="value_changed" from="Opcoes/VBoxContainer/MusicaSlider" to="Node" method="_on_musica_slider_value_changed"]
 [connection signal="value_changed" from="Opcoes/VBoxContainer/SFXSlider" to="Node" method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="Opcoes/VBoxContainer/Voltar" to="Node" method="_on_voltar_pressed"]
+[connection signal="animation_finished" from="CoisasIniciais/AnimationPlayer" to="CoisasIniciais" method="_on_animation_player_animation_finished"]
