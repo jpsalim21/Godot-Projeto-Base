@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://cbm7nwoksga5q"]
+[gd_scene load_steps=2 format=3 uid="uid://cbm7nwoksga5q"]
+
+[ext_resource type="PackedScene" uid="uid://cu5m1ct25rwpc" path="res://Menus/MenuPause.tscn" id="1_6fjn4"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuPause" parent="CanvasLayer" instance=ExtResource("1_6fjn4")]
+process_mode = 3
+visible = false

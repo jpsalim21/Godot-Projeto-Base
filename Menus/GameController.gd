@@ -10,7 +10,7 @@ func _enter_tree() -> void:
 	verify_save_directory(savePath)
 	loadData(configFile)
 	get_tree().set_auto_accept_quit(false)
-	DisplayServer.window_set_size(configuracoes.screen_size)
+	DisplayServer.window_set_size(Configuracoes.resolucoes[configuracoes.screen_index])
 
 #region SALVAR AS CONFIGURAÇÕES
 func verify_save_directory(path : String):

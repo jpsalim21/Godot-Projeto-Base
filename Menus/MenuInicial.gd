@@ -28,26 +28,14 @@ func _on_voltar_pressed() -> void:
 	menu_inicial.visible = true
 	$"../MenuInicial/VBoxContainer/Start".grab_focus()
 
-var resolucoes = [
-	Vector2i(1920, 1080),
-	Vector2i(1600, 900),
-	Vector2i(1280, 720),
-	Vector2i(1024, 768),
-]
-
 func _on_resolucao_item_selected(index: int) -> void:
-	DisplayServer.window_set_size(resolucoes[index])
-	GameController.configuracoes.screen_size = resolucoes[index]
 	GameController.configuracoes.screen_index = index
 
 func _on_geral_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
 	GameController.configuracoes.audioMaster = value
 
 func _on_musica_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Musica"), value)
 	GameController.configuracoes.audioMusica = value
 
 func _on_sfx_slider_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), value)
 	GameController.configuracoes.audioSFX = value

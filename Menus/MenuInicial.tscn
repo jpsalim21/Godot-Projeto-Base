@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b2jk11veho2ly"]
 
-[ext_resource type="Script" path="res://MenuInicial/MenuInicial.gd" id="1_pq5jh"]
-[ext_resource type="Script" path="res://MenuInicial/coisas_iniciais.gd" id="2_l5uqn"]
+[ext_resource type="Script" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
+[ext_resource type="Script" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfrjk"]
 bg_color = Color(0, 0, 0, 1)
@@ -43,7 +43,7 @@ _data = {
 "RESET": SubResource("Animation_0vkyi")
 }
 
-[node name="Control" type="Control"]
+[node name="MenuInicial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
