@@ -1,5 +1,7 @@
 extends Control
 
+#Código para carregar as vinhetas inciais do jogo
+
 func _ready() -> void:
 	if GameController.jaAbriu:
 		queue_free()

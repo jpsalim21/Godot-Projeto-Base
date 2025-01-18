@@ -1,5 +1,7 @@
 extends Control
 
+#Código do menu de pause. Automaticamente pausa a cena quando é iniciado, ou seja, tudo fica parado
+
 func _ready() -> void:
 	$VBoxContainer/Resolucao.selected = GameController.configuracoes.screen_index
 	$VBoxContainer/GeralSlider.value = GameController.configuracoes.audioMaster

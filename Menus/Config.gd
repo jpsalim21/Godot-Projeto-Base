@@ -1,6 +1,8 @@
 extends Resource
 class_name Configuracoes
 
+#Resource responsável por guardar as informações de áudio e resolução do jogo
+
 @export var audioMaster : float = 0:
 	set(value):
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://bxfs7osrmyxuf"]
 
-[ext_resource type="Shader" path="res://TransicaoDeCenas/transicaoDiamante.gdshader" id="1_nu2bx"]
-[ext_resource type="Script" path="res://TransicaoDeCenas/Cortina.gd" id="2_64njm"]
-[ext_resource type="Shader" path="res://TransicaoDeCenas/CirculoShader.gdshader" id="3_e6l8d"]
+[ext_resource type="Shader" uid="uid://fb0k6x80bfcr" path="res://TransicaoDeCenas/transicaoDiamante.gdshader" id="1_nu2bx"]
+[ext_resource type="Script" uid="uid://b1j3072id57k1" path="res://TransicaoDeCenas/Cortina.gd" id="2_64njm"]
+[ext_resource type="Shader" uid="uid://bh4yjrexseivm" path="res://TransicaoDeCenas/CirculoShader.gdshader" id="3_e6l8d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh08p"]
 shader = ExtResource("1_nu2bx")
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-0.1, 1.0]
+"values": [-1.5, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -69,7 +69,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.7, 1, 1.2, 1.4),
 "transitions": PackedFloat32Array(0.329877, 1, 0.5, 0.5, 1),
 "update": 0,
-"values": [-0.1, 0.8, 0.8, 0.7, 1.0]
+"values": [-1.5, 0.8, 0.8, 0.7, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -201,10 +201,10 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hvb6t"]
 _data = {
-"Circle": SubResource("Animation_d3xin"),
-"CircleToon": SubResource("Animation_yublf"),
-"Diamond": SubResource("Animation_lurmq"),
-"RESET": SubResource("Animation_sc7fa")
+&"Circle": SubResource("Animation_d3xin"),
+&"CircleToon": SubResource("Animation_yublf"),
+&"Diamond": SubResource("Animation_lurmq"),
+&"RESET": SubResource("Animation_sc7fa")
 }
 
 [node name="Transicao" type="CanvasLayer"]
@@ -241,5 +241,5 @@ color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_hvb6t")
+&"": SubResource("AnimationLibrary_hvb6t")
 }

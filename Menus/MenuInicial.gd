@@ -1,5 +1,7 @@
 extends Node
 
+#Código do menu inicial
+
 @onready var menu_inicial: Control = $"../MenuInicial"
 @onready var opcoes: Control = $"../Opcoes"
 
