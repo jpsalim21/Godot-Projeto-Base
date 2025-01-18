@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxfs7osrmyxuf"]
+[gd_scene load_steps=12 format=3 uid="uid://bxfs7osrmyxuf"]
 
 [ext_resource type="Shader" uid="uid://fb0k6x80bfcr" path="res://TransicaoDeCenas/transicaoDiamante.gdshader" id="1_nu2bx"]
 [ext_resource type="Script" uid="uid://b1j3072id57k1" path="res://TransicaoDeCenas/Cortina.gd" id="2_64njm"]
@@ -198,12 +198,52 @@ tracks/4/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PainelComum:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lirmv"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PainelComum:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PainelComum:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.11, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hvb6t"]
 _data = {
 &"Circle": SubResource("Animation_d3xin"),
 &"CircleToon": SubResource("Animation_yublf"),
 &"Diamond": SubResource("Animation_lurmq"),
+&"Fade": SubResource("Animation_lirmv"),
 &"RESET": SubResource("Animation_sc7fa")
 }
 
@@ -232,6 +272,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="PainelComum" type="ColorRect" parent="."]
 visible = false
+self_modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

@@ -7,7 +7,7 @@ extends Node
 var resetFocus := true
 
 ##Muda a cena para a cena de caminho [param path], com transição inicial [param animacao1] e transição final [param animacao2]
-##Possíveis animacoes: [br]Diamond[br]Circle[br]CircleToon[br]
+##Possíveis animacoes: [br][br]Diamond[br]Circle[br]CircleToon[br]Fade[br]
 func changeSceneTo(path : StringName, animacao1 : String = "Diamond", animacao2: String = "Diamond"):
 	await Cortina.preencheTela(true, animacao1)
 	get_tree().change_scene_to_file(path)
