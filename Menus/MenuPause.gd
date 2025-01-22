@@ -31,3 +31,9 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 
 func _on_voltar_pressed() -> void:
 	visible = false
+
+func _on_sair_pressed() -> void:
+	visible = false
+	get_tree().paused = false
+	SceneController.changeSceneTo("res://Menus/MenuInicial.tscn")
+	pass # Replace with function body.

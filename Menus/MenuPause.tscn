@@ -88,6 +88,10 @@ max_value = 0.0
 layout_mode = 2
 text = "Voltar"
 
+[node name="Sair" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Sair do Jogo"
+
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Panel" to="." method="_on_panel_visibility_changed"]
 [connection signal="item_selected" from="VBoxContainer/Resolucao" to="." method="_on_resolucao_item_selected"]
@@ -95,3 +99,4 @@ text = "Voltar"
 [connection signal="value_changed" from="VBoxContainer/MusicaSlider" to="." method="_on_musica_slider_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

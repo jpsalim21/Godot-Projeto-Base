@@ -14,7 +14,7 @@ func _ready() -> void:
 
 #Menu inicial
 func _on_start_pressed() -> void:
-	SceneController.changeSceneTo("Teste.tscn", "CircleToon")
+	SceneController.changeSceneTo("res://DESCONSIDERAR/Teste.tscn", "CircleToon")
 
 func _on_options_pressed() -> void:
 	opcoes.visible = true

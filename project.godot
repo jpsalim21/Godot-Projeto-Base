@@ -21,6 +21,12 @@ Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
 SceneController="*res://TransicaoDeCenas/SceneController.gd"
 GameController="*res://Menus/GameController.gd"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="ProjetoBase"
