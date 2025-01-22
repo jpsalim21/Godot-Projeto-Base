@@ -37,7 +37,7 @@ horizontal_alignment = 1
 
 [node name="ResolucaoLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Resolução"
+text = "Resolution"
 
 [node name="Resolucao" type="OptionButton" parent="VBoxContainer"]
 layout_mode = 2
@@ -54,12 +54,13 @@ popup/item_3/id = 3
 
 [node name="VolumeLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Volume:"
+text = "
+Audio:"
+horizontal_alignment = 1
 
 [node name="GeralLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Geral:
-"
+text = "Geral:"
 
 [node name="GeralSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
@@ -68,7 +69,7 @@ max_value = 0.0
 
 [node name="MusicaLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-text = "Música:"
+text = "Music:"
 
 [node name="MusicaSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
@@ -86,11 +87,11 @@ max_value = 0.0
 
 [node name="Voltar" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Voltar"
+text = "Return"
 
 [node name="Sair" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Sair do Jogo"
+text = "Quit"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Panel" to="." method="_on_panel_visibility_changed"]

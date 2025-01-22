@@ -91,17 +91,17 @@ theme_override_constants/separation = 30
 [node name="Start" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Jogar"
+text = "Start"
 
 [node name="Options" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Opções"
+text = "Options"
 
 [node name="Quit" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Sair"
+text = "Quit"
 
 [node name="Opcoes" type="Control" parent="."]
 visible = false
@@ -126,12 +126,12 @@ grow_horizontal = 2
 [node name="Titulo" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Opções"
+text = "Options"
 horizontal_alignment = 1
 
 [node name="ResolucaoLabel" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-text = "Resolução"
+text = "Resolution:"
 
 [node name="Resolucao" type="OptionButton" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -148,12 +148,13 @@ popup/item_3/id = 3
 
 [node name="VolumeLabel" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-text = "Volume:"
+text = "
+Audio:"
+horizontal_alignment = 1
 
 [node name="GeralLabel" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-text = "Geral:
-"
+text = "Geral:"
 
 [node name="GeralSlider" type="HSlider" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -162,7 +163,7 @@ max_value = 0.0
 
 [node name="MusicaLabel" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-text = "Música:"
+text = "Music:"
 
 [node name="MusicaSlider" type="HSlider" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -180,7 +181,7 @@ max_value = 0.0
 
 [node name="Voltar" type="Button" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-text = "Voltar"
+text = "Return"
 
 [node name="CoisasIniciais" type="Control" parent="."]
 layout_mode = 1
