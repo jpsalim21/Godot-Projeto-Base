@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b2jk11veho2ly"]
+[gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
 
 [ext_resource type="Script" uid="uid://djrxho7xs1q05" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
+[ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_ckujo"]
 [ext_resource type="Script" uid="uid://bk654ednl067s" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfrjk"]
@@ -90,16 +91,19 @@ theme_override_constants/separation = 30
 
 [node name="Start" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ckujo")
 theme_override_font_sizes/font_size = 36
 text = "Start"
 
 [node name="Options" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ckujo")
 theme_override_font_sizes/font_size = 36
 text = "Options"
 
 [node name="Quit" type="Button" parent="MenuInicial/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_ckujo")
 theme_override_font_sizes/font_size = 36
 text = "Quit"
 
@@ -112,6 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("2_ckujo")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Opcoes"]
 layout_mode = 1
@@ -122,6 +127,7 @@ offset_left = -375.0
 offset_right = 375.0
 offset_bottom = 649.0
 grow_horizontal = 2
+theme_override_constants/separation = 10
 
 [node name="Titulo" type="Label" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
@@ -184,6 +190,7 @@ layout_mode = 2
 text = "Return"
 
 [node name="CoisasIniciais" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
