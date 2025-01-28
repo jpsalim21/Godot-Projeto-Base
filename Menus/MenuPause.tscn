@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu5m1ct25rwpc"]
 
-[ext_resource type="Script" uid="uid://cnsbxx5g4riyn" path="res://Menus/MenuPause.gd" id="1_k7g53"]
+[ext_resource type="Script" path="res://Menus/MenuPause.gd" id="1_k7g53"]
 
 [node name="MenuPause" type="Control"]
 layout_mode = 3
@@ -44,7 +44,6 @@ layout_mode = 2
 selected = 0
 item_count = 4
 popup/item_0/text = "1920x1080"
-popup/item_0/id = 0
 popup/item_1/text = "1600x900"
 popup/item_1/id = 1
 popup/item_2/text = "1280x720"

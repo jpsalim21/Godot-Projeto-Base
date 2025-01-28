@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
 
-[ext_resource type="Script" uid="uid://djrxho7xs1q05" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
+[ext_resource type="Script" path="res://Menus/MenuInicial.gd" id="1_pq5jh"]
 [ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Menus/UI_theme.tres" id="2_ckujo"]
-[ext_resource type="Script" uid="uid://bk654ednl067s" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
+[ext_resource type="Script" path="res://Menus/coisas_iniciais.gd" id="2_l5uqn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfrjk"]
 bg_color = Color(0, 0, 0, 1)
@@ -40,8 +40,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ekcqx"]
 _data = {
-&"Inicial": SubResource("Animation_q8cmj"),
-&"RESET": SubResource("Animation_0vkyi")
+"Inicial": SubResource("Animation_q8cmj"),
+"RESET": SubResource("Animation_0vkyi")
 }
 
 [node name="MenuInicial" type="Control"]
@@ -141,10 +141,9 @@ text = "Resolution:"
 
 [node name="Resolucao" type="OptionButton" parent="Opcoes/VBoxContainer"]
 layout_mode = 2
-selected = 0
+selected = 3
 item_count = 4
 popup/item_0/text = "1920x1080"
-popup/item_0/id = 0
 popup/item_1/text = "1600x900"
 popup/item_1/id = 1
 popup/item_2/text = "1280x720"
@@ -210,7 +209,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_bfrjk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CoisasIniciais"]
 libraries = {
-&"": SubResource("AnimationLibrary_ekcqx")
+"": SubResource("AnimationLibrary_ekcqx")
 }
 autoplay = "Inicial"
 
