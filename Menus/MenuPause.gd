@@ -1,6 +1,7 @@
 extends Control
 
 #Código do menu de pause. Automaticamente pausa a cena quando é iniciado, ou seja, tudo fica parado
+const MENU_INICIAL : PackedScene = preload("res://Menus/MenuInicial.tscn")
 
 func _ready() -> void:
 	$VBoxContainer/Resolucao.selected = GameController.configuracoes.screen_index
@@ -35,5 +36,4 @@ func _on_voltar_pressed() -> void:
 func _on_sair_pressed() -> void:
 	visible = false
 	get_tree().paused = false
-	SceneController.changeSceneTo("res://Menus/MenuInicial.tscn")
-	pass # Replace with function body.
+	SceneController.changeSceneTo(MENU_INICIAL)

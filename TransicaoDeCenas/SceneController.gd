@@ -8,9 +8,9 @@ var resetFocus := true
 
 ##Muda a cena para a cena de caminho [param path], com transição inicial [param animacao1] e transição final [param animacao2]
 ##Possíveis animacoes: [br][br]Diamond[br]Circle[br]CircleToon[br]Fade[br]
-func changeSceneTo(path : StringName, animacao1 : String = "Diamond", animacao2: String = "Diamond"):
+func changeSceneTo(scene : PackedScene, animacao1 : String = "Diamond", animacao2: String = "Diamond"):
 	await Cortina.preencheTela(true, animacao1)
-	get_tree().change_scene_to_file(path)
+	get_tree().change_scene_to_packed(scene)
 	Cortina.preencheTela(false, animacao2)
 	if resetFocus:
 		Cortina._setFocus(Vector2(0.5, 0.5))

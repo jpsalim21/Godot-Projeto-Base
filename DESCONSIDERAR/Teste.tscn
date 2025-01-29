@@ -20,3 +20,5 @@ script = ExtResource("2_l1n5n")
 texture = ExtResource("3_f4u8r")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
