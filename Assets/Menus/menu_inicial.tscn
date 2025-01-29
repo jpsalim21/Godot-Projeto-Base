@@ -1,0 +1,224 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2jk11veho2ly"]
+
+[ext_resource type="Script" path="res://Assets/Menus/menu_inicial.gd" id="1_x1who"]
+[ext_resource type="Theme" uid="uid://boio4eyolwhtj" path="res://Assets/Menus/UI_theme.tres" id="2_kj6jc"]
+[ext_resource type="Script" path="res://Assets/Menus/coisas_iniciais.gd" id="3_3fg3j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfrjk"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_q8cmj"]
+resource_name = "Inicial"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0vkyi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekcqx"]
+_data = {
+"Inicial": SubResource("Animation_q8cmj"),
+"RESET": SubResource("Animation_0vkyi")
+}
+
+[node name="Menus" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_x1who")
+
+[node name="MenuInicial" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Titulo" type="RichTextLabel" parent="MenuInicial"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 90.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 66
+bbcode_enabled = true
+text = "[center]Nome do jogo"
+fit_content = true
+
+[node name="Botoes" type="VBoxContainer" parent="MenuInicial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 371.0
+offset_top = 308.0
+offset_right = -371.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Start" type="Button" parent="MenuInicial/Botoes"]
+layout_mode = 2
+theme = ExtResource("2_kj6jc")
+theme_override_font_sizes/font_size = 36
+text = "Start"
+
+[node name="Options" type="Button" parent="MenuInicial/Botoes"]
+layout_mode = 2
+theme = ExtResource("2_kj6jc")
+theme_override_font_sizes/font_size = 36
+text = "Options"
+
+[node name="Quit" type="Button" parent="MenuInicial/Botoes"]
+layout_mode = 2
+theme = ExtResource("2_kj6jc")
+theme_override_font_sizes/font_size = 36
+text = "Quit"
+
+[node name="MenuOpcoes" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("2_kj6jc")
+
+[node name="Botoes" type="VBoxContainer" parent="MenuOpcoes"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -375.0
+offset_right = 375.0
+offset_bottom = 649.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="Titulo" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Options"
+horizontal_alignment = 1
+
+[node name="ResolucaoLabel" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "Resolution:"
+
+[node name="Resolucao" type="OptionButton" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+selected = 3
+item_count = 4
+popup/item_0/text = "1920x1080"
+popup/item_1/text = "1600x900"
+popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+popup/item_3/text = "1024x768"
+popup/item_3/id = 3
+
+[node name="VolumeLabel" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "
+Audio:"
+horizontal_alignment = 1
+
+[node name="GeralLabel" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "Geral:"
+
+[node name="GeralSlider" type="HSlider" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="MusicaLabel" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "Music:"
+
+[node name="MusicaSlider" type="HSlider" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="SFXLabel" type="Label" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "SFX:"
+
+[node name="SFXSlider" type="HSlider" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+min_value = -80.0
+max_value = 0.0
+
+[node name="Voltar" type="Button" parent="MenuOpcoes/Botoes"]
+layout_mode = 2
+text = "Return"
+
+[node name="CoisasIniciais" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_3fg3j")
+
+[node name="Panel" type="Panel" parent="CoisasIniciais"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfrjk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CoisasIniciais"]
+libraries = {
+"": SubResource("AnimationLibrary_ekcqx")
+}
+autoplay = "Inicial"
+
+[connection signal="pressed" from="MenuInicial/Botoes/Start" to="Node" method="_on_start_pressed"]
+[connection signal="pressed" from="MenuInicial/Botoes/Options" to="Node" method="_on_options_pressed"]
+[connection signal="pressed" from="MenuInicial/Botoes/Quit" to="Node" method="_on_quit_pressed"]
+[connection signal="item_selected" from="MenuOpcoes/Botoes/Resolucao" to="Node" method="_on_resolucao_item_selected"]
+[connection signal="value_changed" from="MenuOpcoes/Botoes/GeralSlider" to="Node" method="_on_geral_slider_value_changed"]
+[connection signal="value_changed" from="MenuOpcoes/Botoes/MusicaSlider" to="Node" method="_on_musica_slider_value_changed"]
+[connection signal="value_changed" from="MenuOpcoes/Botoes/SFXSlider" to="Node" method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="MenuOpcoes/Botoes/Voltar" to="Node" method="_on_voltar_pressed"]
+[connection signal="animation_finished" from="CoisasIniciais/AnimationPlayer" to="CoisasIniciais" method="_on_animation_player_animation_finished"]
