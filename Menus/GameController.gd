@@ -33,6 +33,8 @@ func loadData(fileName : String):
 		configuracoes = Configuracoes.new()
 		return
 	configuracoes = ResourceLoader.load(savePath + fileName)
+	if not configuracoes:
+		configuracoes = Configuracoes.new()
 	DisplayServer.window_set_size(Configuracoes.resolucoes[configuracoes.screen_index])
 
 func saveData(fileName : String):
