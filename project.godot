@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Projeto Base"
-run/main_scene="res://Assets/Menus/menu_inicial.tscn"
+run/main_scene="res://Menus/MenuInicial.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Cortina="*res://Assets/Transicoes/transicao_cena.tscn"
-SceneController="*res://Assets/Transicoes/scene_controller.gd"
-GameController="*res://Assets/Menus/game_controller.gd"
+Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
+SceneController="*res://TransicaoDeCenas/SceneController.gd"
+GameController="*res://Menus/GameController.gd"
 
 [display]
 
