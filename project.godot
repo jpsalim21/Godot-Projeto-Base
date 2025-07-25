@@ -12,7 +12,7 @@ config_version=5
 
 config/name="ProjetoBase"
 run/main_scene="res://Menus/MenuInicial.tscn"
-config/features=PackedStringArray("4.4", "Mobile")
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,6 +20,12 @@ config/icon="res://icon.svg"
 Cortina="*res://TransicaoDeCenas/TransicaoCena.tscn"
 SceneController="*res://TransicaoDeCenas/SceneController.gd"
 GameController="*res://Menus/GameController.gd"
+
+[debug]
+
+settings/stdout/print_fps=true
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
 
 [display]
 
