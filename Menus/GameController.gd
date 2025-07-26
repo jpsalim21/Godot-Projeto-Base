@@ -6,10 +6,10 @@ extends Node
 #ALERT SEMPRE QUE FOR FECHAR, FECHE O APLICATIVO POR AQUI. 
 
 var configuracoes : Configuracoes = null
-var savePath = "user://save/"
-var configFile = "Configuracao.tres"
+var savePath := "user://save/"
+var configFile := "Configuracao.tres"
 
-var jaAbriu = false
+var jaAbriu := false
 
 func _enter_tree() -> void:
 	verify_save_directory(savePath)
