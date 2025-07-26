@@ -23,8 +23,6 @@ static var resolucoes = [
 	Vector2i(1024, 768), # Padrão 
 ]
 
-signal screenResized()
-
 @export_range(0, 3) var screen_index : int = 2:
 	set(value):
 		screen_index = value

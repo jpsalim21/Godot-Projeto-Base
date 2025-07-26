@@ -9,6 +9,8 @@ var circleMaterial : ShaderMaterial
 
 func _ready() -> void:
 	circleMaterial = circle_transition.material
+	get_viewport().size_changed.connect(windowResized)
+	windowResized()
 
 func preencheTela(booleano : bool, transicao : String = "Diamond"):
 	if not animation.has_animation(transicao):
@@ -22,3 +24,10 @@ func preencheTela(booleano : bool, transicao : String = "Diamond"):
 
 func _setFocus(vetor : Vector2):
 	circleMaterial.set_shader_parameter("endPoint", vetor)
+
+func windowResized():
+	var newSize = DisplayServer.window_get_size()
+	print(newSize)
+	circleMaterial.set_shader_parameter("screen_width", newSize.x)
+	circleMaterial.set_shader_parameter("screen_height", newSize.y)
+	print(circleMaterial.get_shader_parameter("screen_height"))
